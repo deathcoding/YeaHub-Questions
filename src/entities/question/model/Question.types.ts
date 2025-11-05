@@ -28,6 +28,12 @@ interface UserInfo {
   username: string;
 }
 
-export interface GetQuestionsList {
+export type GetQuestionsList = {
   data: Question[];
+}
+
+export type GetQuestionByIdResponse = Question;
+
+export type GetQuestionByIdParamsRequest = {
+  questionId: string
 }
