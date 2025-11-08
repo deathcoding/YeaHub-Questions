@@ -1,4 +1,4 @@
-import type { Specialization } from "@/entities/specialization/model/Specialization.types";
+import type { Specialization } from "@/entities/specialization/model/specialization.types";
 
 export interface Skill {
   id: number;
@@ -9,3 +9,14 @@ export interface Skill {
   updatedAt: string;
   specializations: Specialization[];
 }
+
+export type GetSkillsListResponse = {
+  data: Skill[];
+};
+
+export type GetSkillsListParamsRequest = {
+  page?: number;
+  title?: string;
+  limit?: number;
+  specializations?: number[] | number;
+};

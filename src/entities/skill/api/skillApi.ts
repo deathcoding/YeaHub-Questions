@@ -1,7 +1,21 @@
 import { baseApi } from "@/shared/api/baseApi";
+import type {
+  GetSkillsListParamsRequest,
+  GetSkillsListResponse,
+} from "../model/skill.types";
 
 const skillApi = baseApi.injectEndpoints({
-  endpoints: (builder) => ({
-    getSkillsList: build.query<>
-  })
-})
+  endpoints: (build) => ({
+    getSkillsList: build.query<
+      GetSkillsListResponse,
+      GetSkillsListParamsRequest
+    >({
+      query: (params) => ({
+        url: "/skills",
+        params,
+      }),
+    }),
+  }),
+});
+
+export const { useGetSkillsListQuery } = skillApi;

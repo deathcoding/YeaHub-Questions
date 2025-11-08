@@ -1,5 +1,5 @@
-import type { Skill } from "@/entities/skill/model/Skill.types";
-import type { Specialization } from "@/entities/specialization/model/Specialization.types";
+import type { Skill } from "@/entities/skill/model/skill.types";
+import type { Specialization } from "@/entities/specialization/model/specialization.types";
 
 export interface Question {
   id: number;
@@ -30,10 +30,10 @@ interface UserInfo {
 
 export type GetQuestionsList = {
   data: Question[];
-}
+};
 
 export type GetQuestionByIdResponse = Question;
 
 export type GetQuestionByIdParamsRequest = {
-  questionId: string
-}
+  questionId: string;
+};
