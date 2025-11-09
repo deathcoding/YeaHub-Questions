@@ -1,3 +1,3 @@
-export function QuestionDetail() {
+export function QuestionDetailPage() {
   return <div>Question detail page</div>;
 }

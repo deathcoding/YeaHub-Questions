@@ -1,1 +1,1 @@
-export { QuestionList } from "./ui/QuestionListPage";
+export { QuestionsPage } from "./ui/QuestionsPage";
