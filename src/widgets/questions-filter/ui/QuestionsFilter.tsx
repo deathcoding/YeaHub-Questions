@@ -1,10 +1,7 @@
 import { useGetSkillsListQuery } from "@/entities/skill/api/skillApi";
 import { useGetSpecializationsQuery } from "@/entities/specialization/api/specializationApi";
-import { QuestionsList } from "@/widgets/questionsList";
 
-export function QuestionsPage() {
-  //just checking that the api slices are working
-
+export function QuestionsFilter() {
   const { data: skillsData } = useGetSkillsListQuery({});
   const { data: specializationsData } = useGetSpecializationsQuery({});
 
@@ -13,16 +10,12 @@ export function QuestionsPage() {
 
   return (
     <>
-      Вопросы
-      {/* Виджет QuestionsList*/}
-      <QuestionsList />
-      Специализация
+    {/*Фичи по фильтрациям будут тут*/}
       <ul>
         {specializations?.map((s) => (
           <li key={s.id}>{s.title}</li>
         ))}
       </ul>
-      Скилы
       <ul>
         {skills?.map((s) => (
           <li key={s.id}>{s.title}</li>

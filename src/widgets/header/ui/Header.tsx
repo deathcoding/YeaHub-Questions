@@ -1,4 +1,4 @@
-import Container from "@/shared/ui/Container/Container";
+import Container from "@/shared/ui/container/Container";
 import HeaderStyles from "./Header.module.css";
 import Nav from "./Nav";
 

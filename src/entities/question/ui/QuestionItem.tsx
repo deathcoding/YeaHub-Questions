@@ -1,7 +1,9 @@
 import type { Question } from "../model/question.types";
 
-export function QuestionItem(question: Question) {
-  const { title } = question
+interface QuestionItemProps {
+  question: Question;
+}
 
-  return <li>{title}</li>;
+export function QuestionItem({ question }: QuestionItemProps) {
+  return <li>{question.title}</li>;
 }

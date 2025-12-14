@@ -8,7 +8,7 @@ export function QuestionsList() {
     <div>
       <ul>
         {questions?.map((question) => (
-          <QuestionItem key={question.id} {...question} />
+          <QuestionItem key={question.id} question={question} />
         ))}
       </ul>
     </div>
