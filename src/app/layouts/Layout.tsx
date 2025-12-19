@@ -1,4 +1,4 @@
-import Container from "@/shared/ui/container/Container";
+import { Container } from "@/shared/ui/container";
 import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
 import { Outlet } from "react-router";

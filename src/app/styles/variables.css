@@ -1,17 +1,7 @@
 :root {
   --background-main: rgba(244, 244, 244, 1);
-  --color-surface-alpha: rgba(230, 230, 230, 0.1);
-  --color-black-alpha: rgba(28, 28, 28, 0.2);
-  --color-black: rgba(0, 0, 0, 1);
-  --color-blue-accent: rgba(0, 188, 255, 1);
-  --color-green-accent: rgba(0, 207, 127, 1);
-  --color-black-dark: rgba(20, 20, 20, 1);
-  --color-purple-dark: rgba(24, 0, 62, 1);
-  --color-blue-vivid: rgba(70, 0, 233, 1);
-  --color-purple-medium: rgba(85, 51, 255, 1);
-  --color-purple-main: rgba(106, 11, 255, 1);
-  --color-purple-light: rgba(182, 89, 255, 1);
-  --color-orange-main: rgba(255, 77, 18, 1);
-  --color-orange-light: rgba(255, 115, 97, 1);
+  --font-color-main: rgba(25, 25, 25, 1);
   --color-white: rgba(255, 255, 255, 1);
+  --color-blue-main: rgba(106, 11, 255, 1);
+  --color-border-light: rgba(230, 230, 230, 1);
 }

@@ -1,4 +1,15 @@
 .header {
   height: 64px;
   background-color: var(--color-white);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

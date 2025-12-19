@@ -1,4 +1,4 @@
-import Container from "@/shared/ui/container/Container";
+import { Container } from "@/shared/ui/container";
 
 export function Footer() {
   return (

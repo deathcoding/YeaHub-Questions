@@ -10,13 +10,15 @@ export function QuestionsFilter() {
 
   return (
     <>
-    {/*Фичи по фильтрациям будут тут*/}
+      {/*Фичи по фильтрациям будут тут*/}
       <ul>
+        <p>Специализация</p>
         {specializations?.map((s) => (
           <li key={s.id}>{s.title}</li>
         ))}
       </ul>
       <ul>
+        <p>Навыки</p>
         {skills?.map((s) => (
           <li key={s.id}>{s.title}</li>
         ))}
