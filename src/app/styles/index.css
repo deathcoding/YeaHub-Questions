@@ -10,10 +10,10 @@
 }
 
 * {
-  color: var(--font-color-main);
 }
 
 body {
+  color: var(--font-color-main);
   background-color: var(--background-main);
   font-family:
     "Manrope",
@@ -26,4 +26,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

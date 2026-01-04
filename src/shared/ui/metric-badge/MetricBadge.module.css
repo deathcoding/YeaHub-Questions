@@ -1,0 +1,27 @@
+.metricBadge {
+  width: fit-content;
+  gap: 12px;
+  height: 35px;
+  padding: 6px 10px 6px 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-badge-white);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.value {
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 9px;
+  height: 23px;
+  padding: 2px 4px 2px 4px;
+  border-radius: 4px;
+  background-color: var(--color-blue-main);
+  min-width: 17px;
+  height: 23px;
+}

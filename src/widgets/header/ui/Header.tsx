@@ -3,7 +3,6 @@ import Nav from "./Nav";
 import Auth from "./Auth";
 import { Container } from "@/shared/ui/container";
 
-
 export function Header() {
   return (
     <header className={HeaderStyles.header}>

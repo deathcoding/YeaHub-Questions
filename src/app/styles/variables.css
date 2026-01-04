@@ -1,7 +1,9 @@
 :root {
   --background-main: rgba(244, 244, 244, 1);
   --font-color-main: rgba(25, 25, 25, 1);
+  --color-black-border: rgba(209, 209, 209, 1);
   --color-white: rgba(255, 255, 255, 1);
   --color-blue-main: rgba(106, 11, 255, 1);
   --color-border-light: rgba(230, 230, 230, 1);
+  --color-badge-white: rgba(248, 248, 248, 1);
 }

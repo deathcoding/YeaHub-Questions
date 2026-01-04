@@ -5,8 +5,7 @@ import type {
 } from "../model/skill.types";
 import { mockSkillsList } from "./skill.mock";
 
-// TODO: вынести во внешний конфиг / .env
-const useMocks = true;
+const useMocks = import.meta.env.VITE_USE_MOCKS === "true";
 
 const skillApi = baseApi.injectEndpoints({
   endpoints: (build) => ({

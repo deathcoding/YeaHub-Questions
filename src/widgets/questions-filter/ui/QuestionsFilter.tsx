@@ -1,5 +1,6 @@
 import { useGetSkillsListQuery } from "@/entities/skill/api/skillApi";
 import { useGetSpecializationsQuery } from "@/entities/specialization/api/specializationApi";
+import styles from "./QuestionsFilter.module.css";
 
 export function QuestionsFilter() {
   const { data: skillsData } = useGetSkillsListQuery({});
@@ -9,7 +10,7 @@ export function QuestionsFilter() {
   const specializations = specializationsData?.data;
 
   return (
-    <>
+    <div className={styles.filtersContainer}>
       {/*Фичи по фильтрациям будут тут*/}
       <ul>
         <p>Специализация</p>
@@ -23,6 +24,6 @@ export function QuestionsFilter() {
           <li key={s.id}>{s.title}</li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

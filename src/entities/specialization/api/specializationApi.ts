@@ -5,8 +5,8 @@ import type {
 } from "../model/specialization.types";
 import { mockSpecializationsList } from "./specialization.mock";
 
-// TODO: вынести во внешний конфиг / .env
-const useMocks = true;
+const useMocks = import.meta.env.VITE_USE_MOCKS === "true";
+console.log(useMocks);
 
 const specializationApi = baseApi.injectEndpoints({
   endpoints: (build) => ({

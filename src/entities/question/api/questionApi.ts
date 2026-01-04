@@ -7,8 +7,7 @@ import type {
 } from "../model/question.types";
 import { mockQuestions, mockQuestionsList } from "./question.mock";
 
-// TODO: вынести во внешний конфиг / .env
-const useMocks = true;
+const useMocks = import.meta.env.VITE_USE_MOCKS === "true";
 
 const questionApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
