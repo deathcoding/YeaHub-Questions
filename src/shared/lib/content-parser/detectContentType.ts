@@ -9,7 +9,7 @@ const MARKDOWN_PATTERNS = [
 ] as const;
 
 const HTML_PATTERNS = [
-  { regex: /<\/[a-z]+>|<[a-z]+[^>]*\/>/gi, score: 2 }, // per tag
+  { regex: /<\/[a-z]+>|<[a-z]+[^>]*\/>/gi, score: 2 }, 
   { regex: /\s(class|style|id|src|href)=["']/, score: 5 },
 ] as const;
 

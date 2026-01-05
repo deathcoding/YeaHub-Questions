@@ -27,8 +27,6 @@ export function QuestionItem({ question }: QuestionItemProps) {
           ) : (
             <HtmlContent content={content} />
           )}
-
-          
         </div>
       </Accordion>
     </li>

@@ -1,7 +1,7 @@
 import DOMPurify from "dompurify";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.min.css";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./HtmlContent.module.css";
 
 interface HtmlContentProps {
@@ -11,11 +11,7 @@ interface HtmlContentProps {
 export function HtmlContent({ content }: HtmlContentProps) {
   const contentRef = useRef<HTMLDivElement | null>(null);
 
-  // Очищаем контент (защита от XSS)
-  const sanitizedContent = useMemo(
-    () => DOMPurify.sanitize(content),
-    [content],
-  );
+  const sanitizedContent = DOMPurify.sanitize(content);
 
   useEffect(() => {
     if (contentRef.current) {
@@ -24,16 +20,13 @@ export function HtmlContent({ content }: HtmlContentProps) {
         const el = block as HTMLElement;
 
         if (!el.dataset.highlighted) {
-          // ОБЯЗАТЕЛЬНО добавляем класс hljs для применения темы фона
           el.classList.add("hljs");
-
           hljs.highlightElement(el);
-
           el.dataset.highlighted = "true";
         }
       });
     }
-  }, [sanitizedContent]); 
+  }, [sanitizedContent]);
 
   return (
     <div
