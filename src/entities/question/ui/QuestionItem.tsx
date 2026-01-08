@@ -3,7 +3,7 @@ import type { Question } from "../model/question.types";
 import styles from "./QuestionItem.module.css";
 import { MetricBadge } from "@/shared/ui/metric-badge";
 import { MarkdownContent } from "@/shared/ui/markdown-content/MarkdownContent";
-import { detectContentType } from "@/shared/lib/content-parser/detectContentType";
+import { detectContentType } from "@/shared/lib/utils/detectContentType";
 import { HtmlContent } from "@/shared/ui/html-content/HtmlContent";
 
 interface QuestionItemProps {
@@ -22,6 +22,8 @@ export function QuestionItem({ question }: QuestionItemProps) {
             <MetricBadge title="Рейтинг:" value={question.rate} />
             <MetricBadge title="Сложность:" value={question.complexity} />
           </div>
+          {/* <HtmlContent content={content} /> */}
+
           {contentType === "markdown" ? (
             <MarkdownContent content={content} />
           ) : (

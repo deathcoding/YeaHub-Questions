@@ -3,7 +3,8 @@ import { QuestionItem } from "@/entities/question/ui/QuestionItem";
 import styles from "./QuestionsList.module.css";
 
 export function QuestionsList() {
-  const { data: questionsData } = useGetQuestionsListQuery();
+  const { data: questionsData } = useGetQuestionsListQuery({ page: 1 });
+  console.log(questionsData?.length)
   const questions = questionsData?.data;
   return (
     <div className={styles.container}>

@@ -4,6 +4,7 @@ import type {
   GetQuestionByIdParamsRequest,
   GetQuestionByIdResponse,
   GetQuestionsList,
+  GetQuestionsListParamsRequest,
 } from "../model/question.types";
 import { mockQuestions, mockQuestionsList } from "./question.mock";
 
@@ -11,7 +12,10 @@ const useMocks = import.meta.env.VITE_USE_MOCKS === "true";
 
 const questionApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getQuestionsList: builder.query<GetQuestionsList, void>(
+    getQuestionsList: builder.query<
+      GetQuestionsList,
+      GetQuestionsListParamsRequest
+    >(
       useMocks
         ? {
             queryFn: async () => ({
@@ -19,7 +23,14 @@ const questionApi = baseApi.injectEndpoints({
             }),
           }
         : {
-            query: () => "/questions/public-questions",
+            query: ({ page = 1, limit = 10, keywords }) => ({
+              url: "/questions/public-questions",
+              params: {
+                page,
+                limit,
+                ...(keywords ? { keywords } : {}),
+              },
+            }),
           },
     ),
     getQuestionById: builder.query<

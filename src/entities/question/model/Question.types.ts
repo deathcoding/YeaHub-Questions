@@ -30,10 +30,17 @@ interface UserInfo {
 
 export type GetQuestionsList = {
   data: Question[];
+  total:  number;
 };
 
 export type GetQuestionByIdResponse = Question;
 
 export type GetQuestionByIdParamsRequest = {
   questionId: string;
+};
+
+export type GetQuestionsListParamsRequest = {
+  page?: number;
+  limit?: number;
+  keywords?: string;
 };

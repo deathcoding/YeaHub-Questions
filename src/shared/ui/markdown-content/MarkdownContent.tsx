@@ -3,6 +3,7 @@ import HighlightJS from "markdown-it-highlightjs";
 import "highlight.js/styles/atom-one-dark.css";
 import hljs from "highlight.js";
 import DOMPurify from "dompurify";
+import { getCleanContent } from "@/shared/lib/utils/getCleanContent";
 
 hljs.registerAliases(["typescriptreact"], { languageName: "typescript" });
 hljs.registerAliases(["ts", "tsx"], { languageName: "typescript" });
@@ -20,11 +21,7 @@ interface MarkdownContentProps {
 }
 
 export function MarkdownContent({ content }: MarkdownContentProps) {
-  const cleanContent = content
-    .replace(/^<p>/i, "")
-    .replace(/<\/p>$/i, "")
-    .replace(/&gt;/g, ">")
-    .replace(/&lt;/g, "<");
+  const cleanContent = getCleanContent({ content, format: "md" });
 
   try {
     const html = md.render(cleanContent);
