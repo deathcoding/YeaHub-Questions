@@ -54,6 +54,6 @@ export function Pagination({
       >
         <img src={Arrow_btn_forward}></img>
       </button>
-    </nav>  ]
+    </nav>  
   );
 }
