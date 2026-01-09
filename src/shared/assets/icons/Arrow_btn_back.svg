@@ -1,0 +1,15 @@
+<svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.000000" height="28.000000" fill="none" customFrame="url(#clipPath_4)">
+	<defs>
+		<clipPath id="clipPath_4">
+			<rect width="28.000000" height="28.000000" x="0.000000" y="0.000000" rx="14.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_5">
+			<rect width="20.000000" height="20.000000" x="4.000000" y="4.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Arrow_btn" width="27.000000" height="27.000000" x="0.500000" y="0.500000" rx="13.500000" stroke="rgb(106,11,255)" stroke-width="1" />
+	<g id="Outline / Arrows / Arrow Left" clip-path="url(#clipPath_5)" customFrame="url(#clipPath_5)">
+		<rect id="Outline / Arrows / Arrow Left" width="20.000000" height="20.000000" x="4.000000" y="4.000000" />
+		<path id="Vector" d="M12.7752 8.55806C13.0193 8.80214 13.0193 9.19786 12.7752 9.44194L8.84214 13.375L20.6666 13.375C21.0118 13.375 21.2916 13.6548 21.2916 14C21.2916 14.3452 21.0118 14.625 20.6666 14.625L8.84214 14.625L12.7752 18.5581C13.0193 18.8021 13.0193 19.1979 12.7752 19.4419C12.5311 19.686 12.1354 19.686 11.8913 19.4419L6.89131 14.4419C6.64723 14.1979 6.64723 13.8021 6.89131 13.5581L11.8913 8.55806C12.1354 8.31398 12.5311 8.31398 12.7752 8.55806Z" fill="rgb(106,11,255)" fill-rule="evenodd" />
+	</g>
+</svg>

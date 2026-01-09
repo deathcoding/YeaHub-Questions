@@ -3,7 +3,7 @@ import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.min.css";
 import { useEffect, useMemo, useRef } from "react";
 import styles from "./HtmlContent.module.css";
-import { getCleanContent } from "@/shared/lib/utils/getCleanContent";
+import { getCleanContent } from "@/shared/lib";
 
 interface HtmlContentProps {
   content: string;

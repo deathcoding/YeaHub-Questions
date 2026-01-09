@@ -3,7 +3,7 @@ import HighlightJS from "markdown-it-highlightjs";
 import "highlight.js/styles/atom-one-dark.css";
 import hljs from "highlight.js";
 import DOMPurify from "dompurify";
-import { getCleanContent } from "@/shared/lib/utils/getCleanContent";
+import { getCleanContent } from "@/shared/lib";
 
 hljs.registerAliases(["typescriptreact"], { languageName: "typescript" });
 hljs.registerAliases(["ts", "tsx"], { languageName: "typescript" });
