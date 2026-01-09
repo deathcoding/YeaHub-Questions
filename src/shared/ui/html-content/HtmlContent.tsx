@@ -22,7 +22,7 @@ export function HtmlContent({ content }: HtmlContentProps) {
       const blocks = contentRef.current.querySelectorAll("pre code");
       blocks.forEach((block) => {
         const el = block as HTMLElement;
-      
+
         if (!el.dataset.highlighted) {
           el.classList.add("hljs");
           hljs.highlightElement(el);

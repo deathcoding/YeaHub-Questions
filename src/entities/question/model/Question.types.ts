@@ -30,7 +30,8 @@ interface UserInfo {
 
 export type GetQuestionsList = {
   data: Question[];
-  total:  number;
+  total: number;
+  limit: number;
 };
 
 export type GetQuestionByIdResponse = Question;
