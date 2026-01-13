@@ -6,7 +6,6 @@ import type {
 import { mockSpecializationsList } from "./specialization.mock";
 
 const useMocks = import.meta.env.VITE_USE_MOCKS === "true";
-console.log(useMocks);
 
 const specializationApi = baseApi.injectEndpoints({
   endpoints: (build) => ({

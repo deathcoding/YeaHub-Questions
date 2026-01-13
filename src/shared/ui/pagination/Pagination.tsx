@@ -37,9 +37,9 @@ export function Pagination({
         if (pageNumber === DOTS) {
           return <span key={`dots-${index}`}>...</span>;
         }
-
         return (
           <button
+            key={pageNumber}
             className={`${styles.pageItem} ${pageNumber === currentPage ? styles.active : ""}`}
             onClick={() => onChange(Number(pageNumber))}
           >
@@ -54,6 +54,6 @@ export function Pagination({
       >
         <img src={Arrow_btn_forward}></img>
       </button>
-    </nav>  
+    </nav>
   );
 }
