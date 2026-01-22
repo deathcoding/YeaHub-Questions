@@ -7,6 +7,7 @@ import type {
   GetQuestionsListParamsRequest,
 } from "../model/question.types";
 import { mockQuestions, mockQuestionsList } from "./question.mock";
+import { removeEmptyParams } from "@/shared/lib/utils/removeEmptyParams";
 
 const useMocks = import.meta.env.VITE_USE_MOCKS === "true";
 
@@ -23,14 +24,12 @@ const questionApi = baseApi.injectEndpoints({
             }),
           }
         : {
-            query: ({ page = 1, limit = 10, keywords }) => ({
-              url: "/questions/public-questions",
-              params: {
-                page,
-                limit,
-                ...(keywords ? { keywords } : {}),
-              },
-            }),
+            query: (params) => {
+              return {
+                url: "/questions/public-questions",
+                params: removeEmptyParams(params),
+              };
+            },
           },
     ),
     getQuestionById: builder.query<

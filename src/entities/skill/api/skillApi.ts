@@ -20,9 +20,11 @@ const skillApi = baseApi.injectEndpoints({
             }),
           }
         : {
-            query: (params) => ({
+            query: ({ specializations }) => ({
               url: "/skills",
-              params,
+              params: {
+                ...(specializations ? { specializations } : {}),
+              },
             }),
           },
     ),

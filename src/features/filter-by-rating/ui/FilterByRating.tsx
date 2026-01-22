@@ -1,18 +1,28 @@
-import { Button } from "@/shared/ui/Button";
+import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
+import { Button } from "@/shared/ui/button";
 
-const ratingValues = ['1-3', '4-6', '7-8', '9-10'];
+const ratingValues = ["1", "2", "3", "4", "5"];
 
 export function FilterByRating() {
-
-  const handleClick = () => {
-     throw new Error("Function not implemented.");
-  }
+  const { toggle, activeValues } = useUrlFilter({
+    paramName: "rate",
+    mode: "multiple",
+  });
 
   return (
     <>
-      {ratingValues.map(rate => (
-        <Button key={rate} onClick={handleClick}>{rate}</Button>
-      ))}
+      {ratingValues.map((rate) => {
+        const isActive = activeValues.includes(String(rate));
+        return (
+          <Button
+            key={rate}
+            onClick={() => toggle(rate)}
+            variant={isActive ? "primary" : "outline"}
+          >
+            {rate}
+          </Button>
+        );
+      })}
     </>
-);
+  );
 }

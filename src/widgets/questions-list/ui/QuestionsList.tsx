@@ -10,8 +10,22 @@ export function QuestionsList() {
 
   const currentPage = Number(searchParams.get("page")) || 1;
 
+  const specializationParams = searchParams.getAll("specialization");
+  const specializationIds = specializationParams.map(Number);
+
+  const skillsParams = searchParams.getAll("skills");
+  const skillsIds = skillsParams.map(Number);
+
+  const rateParams = searchParams.getAll("rate")
+  const rateIds = rateParams.map(Number);
+
+
   const { data: questionsData } = useGetQuestionsListQuery({
     page: currentPage,
+    specialization: specializationIds,
+    skills: skillsIds,
+    rate: rateIds
+
   });
 
   const questions = questionsData?.data || [];
@@ -22,7 +36,11 @@ export function QuestionsList() {
   );
 
   const handleChangePage = (page: number) => {
-    setSearchParams({ page: String(page) });
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      next.set("page", String(page));
+      return next;
+    });
   };
 
   return (
