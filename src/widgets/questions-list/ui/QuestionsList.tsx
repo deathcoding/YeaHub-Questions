@@ -16,16 +16,18 @@ export function QuestionsList() {
   const skillsParams = searchParams.getAll("skills");
   const skillsIds = skillsParams.map(Number);
 
-  const rateParams = searchParams.getAll("rate")
+  const rateParams = searchParams.getAll("rate");
   const rateIds = rateParams.map(Number);
 
+  const complexityParams = searchParams.getAll("complexity");
+  const complexityIds = complexityParams.map(Number);
 
   const { data: questionsData } = useGetQuestionsListQuery({
     page: currentPage,
     specialization: specializationIds,
     skills: skillsIds,
-    rate: rateIds
-
+    rate: rateIds,
+    complexity: complexityIds,
   });
 
   const questions = questionsData?.data || [];

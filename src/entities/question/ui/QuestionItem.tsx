@@ -1,5 +1,5 @@
 import { Accordion } from "@/shared/ui/accordion";
-import type { Question } from "../model/question.types";
+import type { Question } from "../model/Question.types";
 import styles from "./QuestionItem.module.css";
 import { MetricBadge } from "@/shared/ui/metric-badge";
 import { MarkdownContent } from "@/shared/ui/markdown-content/MarkdownContent";

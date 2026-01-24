@@ -1,6 +1,7 @@
 import { useGetSkillsListQuery } from "@/entities/skill/api/skillApi";
 import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
 import { Button } from "@/shared/ui/button";
+import { FilterButtonList } from "@/shared/ui/filter-button-list";
 import { useSearchParams } from "react-router";
 
 export function FilterBySkill() {
@@ -20,21 +21,26 @@ export function FilterBySkill() {
   });
 
   return (
-    <ul>
-      <p>Навыки</p>
-      {skills?.map((s) => {
-        const isActive = activeValues.includes(String(s.id));
+    <>
+      <h4>Навыки</h4>
+      <FilterButtonList
+        items={skills}
+        initialVisibleItems={8}
+        renderItem={(option) => {
+          const stringKey = String(option.id);
+          const isActive = activeValues.includes(stringKey);
 
-        return (
-          <Button
-            onClick={() => toggle(s.id)}
-            key={s.id}
-            variant={isActive ? "primary" : "outline"}
-          >
-            {s.title}
-          </Button>
-        );
-      })}
-    </ul>
+          return (
+            <Button
+              key={option.id}
+              onClick={() => toggle(stringKey)}
+              variant={isActive ? "primary" : "outline"}
+            >
+              {option.title}
+            </Button>
+          );
+        }}
+      />
+    </>
   );
 }

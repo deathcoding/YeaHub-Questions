@@ -5,7 +5,7 @@ import type {
   GetQuestionByIdResponse,
   GetQuestionsList,
   GetQuestionsListParamsRequest,
-} from "../model/question.types";
+} from "../model/Question.types";
 import { mockQuestions, mockQuestionsList } from "./question.mock";
 import { removeEmptyParams } from "@/shared/lib/utils/removeEmptyParams";
 

@@ -47,4 +47,5 @@ export type GetQuestionsListParamsRequest = {
   specialization?: number | number[];
   skills?: number | number[];
   rate: number | number[];
+  complexity?: number | number[];
 };

@@ -18,16 +18,23 @@ export function useUrlFilter({
 
   const activeValues = searchParams.getAll(paramName);
   
-
   const toggle = useCallback(
-    (value: string | number | string[]) => {
+    (value: string | string[]) => {
+      
       setSearchParams((prev) => {
         const next = new URLSearchParams(prev);
-        const strValue = String(value);
+       
+        const valuesToToggle = Array.isArray(value) ? value : [value];
+      
+
         if (mode === "single") {
-          toggleSingleValue(next, paramName, strValue);
+          const rawValue = valuesToToggle[valuesToToggle.length - 1];
+          const lastValue = String(rawValue);
+          toggleSingleValue(next, paramName, lastValue);
         } else {
-          toggleMultipleValue(next, paramName, strValue);
+          valuesToToggle.forEach((v) => {
+            toggleMultipleValue(next, paramName, String(v));
+          });
         }
 
         next.delete("page");
@@ -45,6 +52,7 @@ export function useUrlFilter({
   return {
     toggle,
     activeValues,
+    activeValue: activeValues[0],
   };
 }
 
@@ -54,10 +62,12 @@ const toggleSingleValue = (
   value: string,
 ): void => {
   const currentValue = params.get(key);
+
   if (currentValue === value) {
     params.delete(key);
     return;
   }
+ 
   params.set(key, value);
 };
 
