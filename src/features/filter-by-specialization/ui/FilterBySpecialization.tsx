@@ -2,14 +2,16 @@ import { useGetSpecializationsQuery } from "@/entities/specialization/api/specia
 import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
 import { Button } from "@/shared/ui/button";
 import { FilterButtonList } from "@/shared/ui/filter-button-list";
+import { QueryState } from "@/shared/ui/query-state";
 import { useMemo } from "react";
 
+const RESET_PARAMS = ["skills"];
+
 export function FilterBySpecialization() {
-  const { data: response } = useGetSpecializationsQuery({});
+  const { data: response, isLoading, isError } = useGetSpecializationsQuery({});
 
   const specializations = useMemo(() => {
     const rawData = response?.data ?? [];
-
     return rawData.map((s) => ({
       ...s,
       displayTitle: formatTitle(s.title),
@@ -19,31 +21,38 @@ export function FilterBySpecialization() {
   const { toggle, activeValues } = useUrlFilter({
     paramName: "specialization",
     mode: "single",
-    resetParams: ["skills"],
+    resetParams: RESET_PARAMS,
   });
 
   return (
-    <>
-      <h4>Специализация</h4>
-      <FilterButtonList
-        items={specializations}
-        initialVisibleItems={5}
-        renderItem={(option) => {
-          const stringKey = String(option.id);
-          const isActive = activeValues.includes(stringKey);
+    <QueryState
+      isLoading={isLoading}
+      isError={isError}
+      loadingMessage="Загрузка..."
+      errorMessage="Запрос завершился с ошибкой. Проверьте доступ к API."
+    >
+      <>
+        <h4>Специализация</h4>
+        <FilterButtonList
+          items={specializations}
+          initialVisibleItems={5}
+          renderItem={(option) => {
+            const stringKey = String(option.id);
+            const isActive = activeValues.includes(stringKey);
 
-          return (
-            <Button
-              key={option.id}
-              onClick={() => toggle(stringKey)}
-              variant={isActive ? "primary" : "outline"}
-            >
-              {option.displayTitle}
-            </Button>
-          );
-        }}
-      />
-    </>
+            return (
+              <Button
+                key={option.id}
+                onClick={() => toggle(stringKey)}
+                variant={isActive ? "primary" : "outline"}
+              >
+                {option.displayTitle}
+              </Button>
+            );
+          }}
+        />
+      </>
+    </QueryState>
   );
 }
 

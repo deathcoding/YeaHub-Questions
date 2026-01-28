@@ -25,7 +25,11 @@ const FilterButtonListInner = <T,>({
       <div className={styles.container}>
         {visibleItems.map((item) => renderItem(item))}
       </div>
-      {hasMore && <button onClick={toggleExpand} className={styles.button}>Показать все</button>}
+      {hasMore && (
+        <button onClick={toggleExpand} className={styles.button}>
+          Показать все
+        </button>
+      )}
     </>
   );
 };

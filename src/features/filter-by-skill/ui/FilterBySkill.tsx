@@ -2,6 +2,7 @@ import { useGetSkillsListQuery } from "@/entities/skill/api/skillApi";
 import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
 import { Button } from "@/shared/ui/button";
 import { FilterButtonList } from "@/shared/ui/filter-button-list";
+import { QueryState } from "@/shared/ui/query-state";
 import { useSearchParams } from "react-router";
 
 export function FilterBySkill() {
@@ -9,7 +10,7 @@ export function FilterBySkill() {
   const specializationsParams = searchParams.getAll("specialization");
   const specializationsIds = specializationsParams.map(Number);
 
-  const { data: response } = useGetSkillsListQuery({
+  const { data: response, isLoading, isError } = useGetSkillsListQuery({
     specializations:
       specializationsIds.length > 0 ? specializationsIds : undefined,
   });
@@ -21,26 +22,33 @@ export function FilterBySkill() {
   });
 
   return (
-    <>
-      <h4>Навыки</h4>
-      <FilterButtonList
-        items={skills}
-        initialVisibleItems={8}
-        renderItem={(option) => {
-          const stringKey = String(option.id);
-          const isActive = activeValues.includes(stringKey);
+    <QueryState
+      isLoading={isLoading}
+      isError={isError}
+      loadingMessage="Загрузка..."
+      errorMessage="Запрос завершился с ошибкой. Проверьте доступ к API."
+    >
+      <>
+        <h4>Навыки</h4>
+        <FilterButtonList
+          items={skills}
+          initialVisibleItems={8}
+          renderItem={(option) => {
+            const stringKey = String(option.id);
+            const isActive = activeValues.includes(stringKey);
 
-          return (
-            <Button
-              key={option.id}
-              onClick={() => toggle(stringKey)}
-              variant={isActive ? "primary" : "outline"}
-            >
-              {option.title}
-            </Button>
-          );
-        }}
-      />
-    </>
+            return (
+              <Button
+                key={option.id}
+                onClick={() => toggle(stringKey)}
+                variant={isActive ? "primary" : "outline"}
+              >
+                {option.title}
+              </Button>
+            );
+          }}
+        />
+      </>
+    </QueryState>
   );
 }

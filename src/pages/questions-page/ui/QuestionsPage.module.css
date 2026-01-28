@@ -1,5 +1,21 @@
 .page {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 1236px;
+  margin: 0 auto;
+}
+
+.content {
+  flex: 1 1 400px;
+  min-width: 0;
+}
+
+.page aside {
+  flex: 0 1 392px;
+  min-width: min(392px, 100%);
 }

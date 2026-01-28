@@ -4,6 +4,8 @@ import styles from "./QuestionsList.module.css";
 import { useSearchParams } from "react-router";
 import { calculateTotalPages } from "@/shared/lib";
 import { Pagination } from "@/shared/ui/pagination";
+import { QueryState } from "@/shared/ui/query-state";
+import { QuestionsListSkeleton } from "./QuestionsListSkeleton";
 
 export function QuestionsList() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,19 +24,25 @@ export function QuestionsList() {
   const complexityParams = searchParams.getAll("complexity");
   const complexityIds = complexityParams.map(Number);
 
-  const { data: questionsData } = useGetQuestionsListQuery({
+  const searchKeywords = searchParams.get("keywords");
+
+  const {
+    data: questionsData,
+    isLoading,
+    isError,
+  } = useGetQuestionsListQuery({
     page: currentPage,
     specialization: specializationIds,
     skills: skillsIds,
     rate: rateIds,
     complexity: complexityIds,
+    keywords: searchKeywords,
   });
 
-  const questions = questionsData?.data || [];
-
+  const questions = questionsData?.data ?? [];
   const totalPages = calculateTotalPages(
-    questionsData?.total || 1,
-    questionsData?.limit || 10,
+    questionsData?.total ?? 1,
+    questionsData?.limit ?? 10,
   );
 
   const handleChangePage = (page: number) => {
@@ -46,18 +54,29 @@ export function QuestionsList() {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Вопросы React, JavaScript</h1>
-      <ul>
-        {questions?.map((question) => (
-          <QuestionItem key={question.id} question={question} />
-        ))}
-      </ul>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onChange={handleChangePage}
-      />
-    </div>
+    <QueryState
+      isLoading={isLoading}
+      isError={isError}
+      errorMessage="Данные не загрузились. Проверьте доступ к API."
+      loadingFallback={<QuestionsListSkeleton />}
+    >
+      <div className={styles.container}>
+        <h1 className={styles.title}>Вопросы React, JavaScript</h1>
+
+        {questions.length === 0 &&
+          "По вашему запросу ничего не найдено. Попробуйте изменить фильтры или поиск"}
+
+        <ul>
+          {questions.map((question) => (
+            <QuestionItem key={question.id} question={question} />
+          ))}
+        </ul>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onChange={handleChangePage}
+        />
+      </div>
+    </QueryState>
   );
 }

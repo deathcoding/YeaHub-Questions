@@ -7,5 +7,7 @@
   --color-purple-text: rgba(85, 9, 204, 1);
   --color-border-light: rgba(230, 230, 230, 1);
   --color-badge-white: rgba(248, 248, 248, 1);
-  --color-border-gray:rgba(186, 186, 186, 1);
+  --color-border-gray: rgba(186, 186, 186, 1);
+  --skeleton-bg: rgba(230, 230, 230, 1);
+  --skeleton-highlight: rgba(244, 244, 244, 1);
 }

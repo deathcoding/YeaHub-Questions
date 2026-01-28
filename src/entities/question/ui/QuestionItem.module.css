@@ -2,9 +2,14 @@
   list-style: none;
   position: relative;
   line-height: 22px;
-  /* width: 100%; */
+ 
   border-bottom: 1px solid var(--color-black-border);
   margin-top: 24px;
+}
+
+.accordionBody {
+  display: flex;
+  flex-direction: column;
 }
 
 .questionItem::before {
@@ -25,10 +30,17 @@
   gap: 40px;
 }
 
-.content {
+.panel {
   padding: 24px;
 }
 
 code {
   border-radius: 24px;
+}
+
+.link {
+  color: var(--color-blue-main);
+  align-self: flex-end;
+  display: flex;
+  gap: 8px;
 }

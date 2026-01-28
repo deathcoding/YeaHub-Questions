@@ -9,19 +9,11 @@ interface ButtonProps {
 }
 
 export function Button({ children, onClick, variant, ...props }: ButtonProps) {
-  const buttonClasses = clsx(
-    styles.button,
-    variant && styles[variant], 
-  );
-  
+  const buttonClasses = clsx(styles.button, variant && styles[variant]);
+
   return (
-      <button
-        onClick={onClick}
-        className={buttonClasses}
-        {...props}
-      >
-        {children}
-      </button>
-    
+    <button onClick={onClick} className={buttonClasses} {...props}>
+      {children}
+    </button>
   );
 }

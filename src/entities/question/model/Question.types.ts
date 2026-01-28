@@ -43,7 +43,7 @@ export type GetQuestionByIdParamsRequest = {
 export type GetQuestionsListParamsRequest = {
   page?: number;
   limit?: number;
-  keywords?: string;
+  keywords?: string | null;
   specialization?: number | number[];
   skills?: number | number[];
   rate: number | number[];
