@@ -1,5 +1,5 @@
 import { useGetQuestionsListQuery } from "@/entities/question/api/questionApi";
-import { QuestionItem } from "@/entities/question/ui/QuestionItem";
+import { QuestionItem } from "@/entities/question/ui/QuestionItem/QuestionItem";
 import styles from "./QuestionsList.module.css";
 import { useSearchParams } from "react-router";
 import { calculateTotalPages } from "@/shared/lib";

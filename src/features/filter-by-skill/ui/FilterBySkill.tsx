@@ -10,7 +10,11 @@ export function FilterBySkill() {
   const specializationsParams = searchParams.getAll("specialization");
   const specializationsIds = specializationsParams.map(Number);
 
-  const { data: response, isLoading, isError } = useGetSkillsListQuery({
+  const {
+    data: response,
+    isLoading,
+    isError,
+  } = useGetSkillsListQuery({
     specializations:
       specializationsIds.length > 0 ? specializationsIds : undefined,
   });

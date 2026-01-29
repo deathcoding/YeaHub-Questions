@@ -24,8 +24,7 @@ const questionApi = baseApi.injectEndpoints({
       GetQuestionByIdResponse,
       GetQuestionByIdParamsRequest
     >({
-      query: ({ questionId }) =>
-        `/questions/public-questions/${questionId}`,
+      query: ({ questionId }) => `/questions/public-questions/${questionId}`,
     }),
   }),
 });

@@ -46,6 +46,6 @@ export type GetQuestionsListParamsRequest = {
   keywords?: string | null;
   specialization?: number | number[];
   skills?: number | number[];
-  rate: number | number[];
+  rate?: number | number[];
   complexity?: number | number[];
 };

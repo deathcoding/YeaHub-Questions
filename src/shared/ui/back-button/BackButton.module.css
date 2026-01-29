@@ -1,0 +1,9 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-blue-main);
+  border: none;
+  background-color: var(--background-main);
+}

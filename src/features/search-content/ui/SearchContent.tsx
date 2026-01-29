@@ -3,8 +3,6 @@ import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
 import { Input } from "@/shared/ui/Input";
 import { useState, type ChangeEvent } from "react";
 
-
-
 export function SearchContent() {
   const { set, activeValue } = useUrlFilter({
     paramName: "keywords",
@@ -13,7 +11,6 @@ export function SearchContent() {
 
   const [inputValue, setInputValue] = useState(activeValue ?? "");
   const [prevActiveValue, setPrevActiveValue] = useState(activeValue);
-
 
   if (activeValue !== prevActiveValue) {
     setInputValue(activeValue);

@@ -1,0 +1,46 @@
+.header {
+  background-color: var(--color-white);
+  width: 100%;
+
+  border-radius: 24px;
+  padding: 24px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 480px;
+  min-width: 0;
+}
+
+.section {
+  width: 100%;
+
+  background-color: var(--color-white);
+  color: var(--color-black-text);
+  border-radius: 24px;
+  padding: 24px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.backButton {
+  margin-bottom: 21px;
+}
