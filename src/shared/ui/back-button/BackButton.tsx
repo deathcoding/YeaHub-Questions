@@ -9,7 +9,11 @@ interface BackButtonProps {
   className?: string;
 }
 
-export function BackButton({ fallbackPath, children, className }: BackButtonProps) {
+export function BackButton({
+  fallbackPath,
+  children,
+  className,
+}: BackButtonProps) {
   const navigate = useNavigate();
 
   const buttonClasses = clsx(styles.button, className);

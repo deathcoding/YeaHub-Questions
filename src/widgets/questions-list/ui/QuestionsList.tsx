@@ -6,23 +6,13 @@ import { calculateTotalPages } from "@/shared/lib";
 import { Pagination } from "@/shared/ui/pagination";
 import { QueryState } from "@/shared/ui/query-state";
 import { QuestionsListSkeleton } from "./QuestionsListSkeleton";
+import { useParamsIds } from "@/shared/lib/hooks/useParamsIds";
 
 export function QuestionsList() {
   const [searchParams, setSearchParams] = useSearchParams();
-
   const currentPage = Number(searchParams.get("page")) || 1;
 
-  const specializationParams = searchParams.getAll("specialization");
-  const specializationIds = specializationParams.map(Number);
-
-  const skillsParams = searchParams.getAll("skills");
-  const skillsIds = skillsParams.map(Number);
-
-  const rateParams = searchParams.getAll("rate");
-  const rateIds = rateParams.map(Number);
-
-  const complexityParams = searchParams.getAll("complexity");
-  const complexityIds = complexityParams.map(Number);
+  const { specializationIds, skillsIds, rateIds, complexityIds } = useParamsIds();
 
   const searchKeywords = searchParams.get("keywords");
 
@@ -40,8 +30,9 @@ export function QuestionsList() {
   });
 
   const questions = questionsData?.data ?? [];
+
   const totalPages = calculateTotalPages(
-    questionsData?.total ?? 1,
+    questionsData?.total ?? 0,
     questionsData?.limit ?? 10,
   );
 
@@ -63,7 +54,7 @@ export function QuestionsList() {
       <div className={styles.container}>
         <h1 className={styles.title}>Вопросы React, JavaScript</h1>
 
-        {questions.length === 0 &&
+        {!isLoading && questions.length === 0 &&
           "По вашему запросу ничего не найдено. Попробуйте изменить фильтры или поиск"}
 
         <ul>

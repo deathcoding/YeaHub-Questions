@@ -2,7 +2,7 @@ import { Logo } from "@/shared/ui/logo";
 import styles from "./Nav.module.css";
 import { NavLink } from "react-router";
 
-export default function Nav() {
+export function Nav() {
   return (
     <div className={styles.navLinks}>
       <NavLink to="/">

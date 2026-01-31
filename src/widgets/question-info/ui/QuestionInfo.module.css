@@ -27,4 +27,5 @@
   color: var(--color-blue-main);
   display: flex;
   gap: 14px;
+  flex-wrap: wrap;
 }

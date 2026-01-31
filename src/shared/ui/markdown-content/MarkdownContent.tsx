@@ -28,6 +28,6 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
     const safe = DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
     return <div dangerouslySetInnerHTML={{ __html: safe }} />;
   } catch {
-    return "";
+    return "Ошибка парсинга md";
   }
 }

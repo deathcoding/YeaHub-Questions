@@ -16,19 +16,22 @@ const FALLBACK = {
 
 export function QuestionDetailPage() {
   const { id } = useParams<"id">();
+
   const {
     data: question,
     isLoading,
     isError,
-  } = useGetQuestionByIdQuery({ questionId: id! }, { skip: !id });
-
+  } = useGetQuestionByIdQuery({ questionId: id ?? "" }, { skip: !id });
+ 
   if (!id) return <p>Вопрос не найден</p>;
 
   const hasError = isError || (!isLoading && !question);
 
   return (
     <>
-      <BackButton fallbackPath="/" className={styles.backButton}>Назад</BackButton>
+      <BackButton fallbackPath="/" className={styles.backButton}>
+        Назад
+      </BackButton>
       <QueryState
         isLoading={isLoading}
         isError={hasError}

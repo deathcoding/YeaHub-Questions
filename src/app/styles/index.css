@@ -9,9 +9,6 @@
   font-display: swap;
 }
 
-* {
-}
-
 body {
   color: var(--font-color-main);
   background-color: var(--background-main);

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import styles from "./Auth.module.css";
 
-export default function Auth() {
+export function Auth() {
   return (
     <div className={styles.authLinks}>
       <NavLink className={styles.loginLink} to={"/auth/login"}>
