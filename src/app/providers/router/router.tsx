@@ -1,5 +1,5 @@
 import Layout from "@/app/layouts/Layout";
-import { QuestionsPage } from "@/pages/questions-page";
+import { QuestionsPage } from "@/pages/questions-page/ui/QuestionsPage";
 import { createBrowserRouter } from "react-router";
 
 export const router = createBrowserRouter([
