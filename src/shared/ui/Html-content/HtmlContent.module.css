@@ -1,0 +1,11 @@
+.htmlContent :global(code) {
+  tab-size: 2 !important;
+  -moz-tab-size: 2 !important;
+  line-height: 25px;
+}
+
+ul :global,
+ol :global {
+  list-style: none;
+  padding-left: 0;
+}
