@@ -1,22 +1,25 @@
 import { useGetSpecializationsQuery } from "@/entities/specialization/api/specializationApi";
+import type { Specialization } from "@/entities/specialization/model/specialization.types";
 import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
 import { Button } from "@/shared/ui/button";
 import { FilterButtonList } from "@/shared/ui/filter-button-list";
 import { QueryState } from "@/shared/ui/query-state";
-import { useMemo } from "react";
+// import { useMemo } from "react";
 
 const RESET_PARAMS = ["skills"];
 
 export function FilterBySpecialization() {
   const { data: response, isLoading, isError } = useGetSpecializationsQuery({});
 
-  const specializations = useMemo(() => {
-    const rawData = response?.data ?? [];
-    return rawData.map((s) => ({
-      ...s,
-      displayTitle: formatTitle(s.title),
-    }));
-  }, [response?.data]);
+  // const specializations = useMemo(() => {
+  //   const rawData = response?.data ?? [];
+  //   return rawData.map((s) => ({
+  //     ...s,
+  //     displayTitle: formatTitle(s.title),
+  //   }));
+  // }, [response?.data]);
+
+   const specializations =  response?.data ?? []
 
   const { toggle, activeValues } = useUrlFilter({
     paramName: "specialization",
@@ -36,7 +39,7 @@ export function FilterBySpecialization() {
         <FilterButtonList
           items={specializations}
           initialVisibleItems={5}
-          renderItem={(option) => {
+          renderItem={(option: Specialization) => {
             const stringKey = String(option.id);
             const isActive = activeValues.includes(stringKey);
 
@@ -46,7 +49,7 @@ export function FilterBySpecialization() {
                 onClick={() => toggle(stringKey)}
                 variant={isActive ? "primary" : "outline"}
               >
-                {option.displayTitle}
+                {formatTitle(option.title)}
               </Button>
             );
           }}

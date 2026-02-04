@@ -1,4 +1,5 @@
 import { useGetSkillsListQuery } from "@/entities/skill/api/skillApi";
+import type { Skill } from "@/entities/skill/model/skill.types";
 import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
 import { Button } from "@/shared/ui/button";
 import { FilterButtonList } from "@/shared/ui/filter-button-list";
@@ -37,7 +38,7 @@ export function FilterBySkill() {
         <FilterButtonList
           items={skills}
           initialVisibleItems={8}
-          renderItem={(option) => {
+          renderItem={(option: Skill) => {
             const stringKey = String(option.id);
             const isActive = activeValues.includes(stringKey);
 
