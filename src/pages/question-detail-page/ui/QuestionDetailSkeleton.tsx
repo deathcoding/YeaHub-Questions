@@ -1,4 +1,4 @@
-import { Skeleton } from "@/shared/ui/skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import styles from "./QuestionDetailSkeleton.module.css";
 
 export function QuestionDetailSkeleton() {

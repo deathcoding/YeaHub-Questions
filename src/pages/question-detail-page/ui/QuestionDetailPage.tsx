@@ -1,13 +1,13 @@
 import { useGetQuestionByIdQuery } from "@/entities/question/api/questionApi";
-import { QueryState } from "@/shared/ui/query-state";
-import { RichContent } from "@/shared/ui/rich-content";
+import { QueryState } from "@/shared/ui/Query-state";
+import { RichContent } from "@/shared/ui/Rich-content";
 import { useParams } from "react-router";
 import { QuestionDetailSkeleton } from "./QuestionDetailSkeleton";
 import { QuestionHeader } from "@/entities/question";
 import { QuestionInfo } from "@/widgets/question-info/ui/QuestionInfo";
 import styles from "./QuestionDetail.module.css";
-import { SectionCard } from "@/shared/ui/section-card";
-import { BackButton } from "@/shared/ui/back-button";
+import { SectionCard } from "@/shared/ui/Section-card";
+import { BackButton } from "@/shared/ui/Back-button";
 
 const FALLBACK = {
   short: "Нет короткого описания",

@@ -1,8 +1,8 @@
-import { Accordion } from "@/shared/ui/accordion";
+import { Accordion } from "@/shared/ui/Accordion";
 import type { Question } from "../../model/question.types";
 import styles from "./QuestionItem.module.css";
-import { MetricBadge } from "@/shared/ui/metric-badge";
-import { RichContent } from "@/shared/ui/rich-content";
+import { MetricBadge } from "@/shared/ui/Metric-badge";
+import { RichContent } from "@/shared/ui/Rich-content";
 import { Link } from "react-router";
 import OutLine_Arrow from "@/shared/assets/icons/Outline_Arrow.svg";
 

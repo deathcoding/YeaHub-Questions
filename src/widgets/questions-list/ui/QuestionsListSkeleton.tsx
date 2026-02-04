@@ -1,4 +1,4 @@
-import { Skeleton } from "@/shared/ui/skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import listStyles from "./QuestionsList.module.css";
 import styles from "./QuestionsListSkeleton.module.css";
 

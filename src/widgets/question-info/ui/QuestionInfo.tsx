@@ -1,7 +1,7 @@
 import type { Skill } from "@/entities/skill/model/skill.types";
 import styles from "./QuestionInfo.module.css";
-import { MetricBadge } from "@/shared/ui/metric-badge";
-import { Badge } from "@/shared/ui/badge";
+import { MetricBadge } from "@/shared/ui/Metric-badge";
+import { Badge } from "@/shared/ui/Badge";
 
 interface QuestionInfoProps {
   complexity: number;

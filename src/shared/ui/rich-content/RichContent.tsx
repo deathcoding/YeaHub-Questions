@@ -1,6 +1,6 @@
 import { detectContentType } from "@/shared/lib";
-import { HtmlContent } from "@/shared/ui/html-content";
-import { MarkdownContent } from "@/shared/ui/markdown-content";
+import { HtmlContent } from "@/shared/ui/Html-content";
+import { MarkdownContent } from "@/shared/ui/Markdown-content";
 import { useMemo } from "react";
 
 interface RichContentProps {

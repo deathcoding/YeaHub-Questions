@@ -1,9 +1,9 @@
 import { useGetSpecializationsQuery } from "@/entities/specialization/api/specializationApi";
 import type { Specialization } from "@/entities/specialization/model/specialization.types";
 import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
-import { Button } from "@/shared/ui/button";
-import { FilterButtonList } from "@/shared/ui/filter-button-list";
-import { QueryState } from "@/shared/ui/query-state";
+import { Button } from "@/shared/ui/Button";
+import { FilterButtonList } from "@/shared/ui/Filter-button-list";
+import { QueryState } from "@/shared/ui/Query-state";
 // import { useMemo } from "react";
 
 const RESET_PARAMS = ["skills"];
@@ -19,7 +19,7 @@ export function FilterBySpecialization() {
   //   }));
   // }, [response?.data]);
 
-   const specializations =  response?.data ?? []
+  const specializations = response?.data ?? []
 
   const { toggle, activeValues } = useUrlFilter({
     paramName: "specialization",

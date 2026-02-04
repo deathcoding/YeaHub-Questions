@@ -1,9 +1,9 @@
 import { useGetSkillsListQuery } from "@/entities/skill/api/skillApi";
 import type { Skill } from "@/entities/skill/model/skill.types";
 import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
-import { Button } from "@/shared/ui/button";
-import { FilterButtonList } from "@/shared/ui/filter-button-list";
-import { QueryState } from "@/shared/ui/query-state";
+import { Button } from "@/shared/ui/Button";
+import { FilterButtonList } from "@/shared/ui/Filter-button-list";
+import { QueryState } from "@/shared/ui/Query-state";
 import { useSearchParams } from "react-router";
 
 export function FilterBySkill() {

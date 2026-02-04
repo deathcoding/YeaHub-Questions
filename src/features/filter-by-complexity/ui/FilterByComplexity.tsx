@@ -1,7 +1,7 @@
 // entities/filter/ui/FilterByComplexity.tsx
 import { useUrlFilter } from "@/shared/lib/hooks/useUrlFilter";
-import { Button } from "@/shared/ui/button";
-import { FilterButtonList } from "@/shared/ui/filter-button-list";
+import { Button } from "@/shared/ui/Button";
+import { FilterButtonList } from "@/shared/ui/Filter-button-list";
 
 const complexityOptions = [
   { label: "1-3", values: ["1", "2", "3"] },

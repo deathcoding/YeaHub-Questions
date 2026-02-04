@@ -3,10 +3,11 @@ import { QuestionItem } from "@/entities/question/ui/QuestionItem/QuestionItem";
 import styles from "./QuestionsList.module.css";
 import { useSearchParams } from "react-router";
 import { calculateTotalPages } from "@/shared/lib";
-import { Pagination } from "@/shared/ui/pagination";
-import { QueryState } from "@/shared/ui/query-state";
+import { Pagination } from "@/shared/ui/Pagination";
+import { QueryState } from "@/shared/ui/Query-state";
 import { QuestionsListSkeleton } from "./QuestionsListSkeleton";
 import { useParamsIds } from "@/shared/lib/hooks/useParamsIds";
+import type { Question } from "@/entities/question/model/question.types";
 
 export function QuestionsList() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -60,7 +61,7 @@ export function QuestionsList() {
           "По вашему запросу ничего не найдено. Попробуйте изменить фильтры или поиск"}
 
         <ul>
-          {questions.map((question) => (
+          {questions.map((question: Question) => (
             <QuestionItem key={question.id} question={question} />
           ))}
         </ul>

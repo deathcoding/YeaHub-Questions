@@ -1,4 +1,4 @@
-import { Logo } from "@/shared/ui/logo";
+import { Logo } from "@/shared/ui/Logo";
 import styles from "./Nav.module.css";
 import { NavLink } from "react-router";
 
