@@ -12,7 +12,8 @@ export function QuestionsList() {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
 
-  const { specializationIds, skillsIds, rateIds, complexityIds } = useParamsIds();
+  const { specializationIds, skillsIds, rateIds, complexityIds } =
+    useParamsIds();
 
   const searchKeywords = searchParams.get("keywords");
 
@@ -54,7 +55,8 @@ export function QuestionsList() {
       <div className={styles.container}>
         <h1 className={styles.title}>Вопросы React, JavaScript</h1>
 
-        {!isLoading && questions.length === 0 &&
+        {!isLoading &&
+          questions.length === 0 &&
           "По вашему запросу ничего не найдено. Попробуйте изменить фильтры или поиск"}
 
         <ul>

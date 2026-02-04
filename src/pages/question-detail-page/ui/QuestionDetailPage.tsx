@@ -14,7 +14,7 @@ const FALLBACK = {
   long: "Нет длинного описания",
 } as const;
 
-export function QuestionDetailPage() {
+function QuestionDetailPage() {
   const { id } = useParams<"id">();
 
   const {
@@ -22,7 +22,7 @@ export function QuestionDetailPage() {
     isLoading,
     isError,
   } = useGetQuestionByIdQuery({ questionId: id ?? "" }, { skip: !id });
- 
+
   if (!id) return <p>Вопрос не найден</p>;
 
   const hasError = isError || (!isLoading && !question);
@@ -68,3 +68,5 @@ export function QuestionDetailPage() {
     </>
   );
 }
+
+export const Component = QuestionDetailPage;
