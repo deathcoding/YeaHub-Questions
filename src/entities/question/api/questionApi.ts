@@ -4,7 +4,7 @@ import type {
   GetQuestionByIdResponse,
   GetQuestionsList,
   GetQuestionsListParamsRequest,
-} from "../model/question.types";
+} from "@/entities/question/model/question.types";
 import { removeEmptyParams } from "@/shared/lib/utils/removeEmptyParams";
 
 const questionApi = baseApi.injectEndpoints({
